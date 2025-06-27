@@ -59,8 +59,15 @@ for p in itertools.permutations('ABC', 2):
     print(p)
 
 # product：笛卡兒積
-for prod in itertools.product('AB', '12'):
+for prod in itertools.product('AB', '12', repeat = 1):
     print(prod)
+'''
+('A', '1')
+('A', '2')
+('B', '1')
+('B', '2')
+'''
+product('AB', '12', repeat = 2) 等價於 product('AB', '12', 'AB', '12')
 
 # groupby：分組
 data = [('A', 1), ('A', 2), ('B', 3), ('B', 4)]
