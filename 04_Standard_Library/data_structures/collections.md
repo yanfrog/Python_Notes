@@ -28,8 +28,19 @@ d.appendleft(0)
 print(d)  # deque([0, 1, 2, 3])
 
 # Counter 範例
-c = Counter("abracadabra")
-print(c)  # Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+c = Counter('banana')
+print(c)             # Counter({'a': 3, 'n': 2, 'b': 1})
+print(c['a'])        # 3
+print(c['x'])        # 0（不存在也不會錯）
+
+# 最常出現的元素
+print(c.most_common(2))  # [('a', 3), ('n', 2)]
+
+# 相加
+c3 = Counter('abc')
+c4 = Counter('bcd')
+print(c3 + c4)       # Counter({'b': 2, 'c': 2, 'a': 1, 'd': 1})
+
 
 # namedtuple 範例
 Point = namedtuple("Point", ["x", "y"])
