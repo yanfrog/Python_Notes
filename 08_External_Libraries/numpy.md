@@ -59,6 +59,11 @@ print(m + n)
 # 條件與邏輯
 a = np.array([1, 2, 3, 4])
 print(np.where(a > 2, a, 0))  # [0 0 3 4]
+# 截斷
+np.clip(array, a_min, a_max)
+    # array：要處理的資料
+    # a_min：下界（數值會不小於這個值）
+    # a_max：上界（數值會不大於這個值）
 
 # 線性代數
 A = np.array([[1, 2], [3, 4]])
@@ -66,12 +71,18 @@ inv_A = np.linalg.inv(A)
 print(np.dot(A, inv_A))      # 接近單位矩陣
 
 # 隨機數
-print(np.random.rand(2, 3))        # 均勻分布
+np.random.seed(0)
+# 設定隨機種子碼
+print(np.random.rand(2, 3))                     # 均勻分布
 # 產生一個 2x3 的陣列，元素值在 0~1 之間，服從均勻分布（每個值出現機率相同）
-print(np.random.randn(3))          # (normal)標準常態分布
+print(np.random.randn(3))                       # (normal)標準常態分布
 # 產生一個長度為 3 的一維陣列，元素值服從標準常態分布（平均數 0，標準差 1）
-print(np.random.randint(0, 10, 5)) # (int)整數亂數
+print(np.random.randint(0, 10, 5))              # (int)整數亂數
 # 產生一個長度為 5 的一維陣列，元素為0 到 9（不含 10）之間的隨機整數
+print(np.random.uniform(10, 20, size=5))        # 均勻分布，可任意指定範圍
+# 產生 5 個 [10, 20) 區間內的隨機浮點數
+print(np.random.uniform(-1, 1, size=(2, 3)))
+# 產生一個 2x3 矩陣，元素落在 [-1, 1)
 ```
 
 ## 小提醒
